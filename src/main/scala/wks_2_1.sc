@@ -23,20 +23,22 @@ if (2 == 2) s = 100 else s = "abc"
 s //Any 100
 
 
-//TAKE HOME  ?: from Java, C++ is
-//combined with  if-else in Scala
+//TAKE HOME  ternary operator ?: from Java is
+//combined with if-else anf you have
+// if/else on steroids in Scala
 
 
 //Q4I
 // if s is Any you CANNOT
-//if (s > 99) 4
+//if (s > 99) 4  // you cannot compare  Any with 99 using <
+// it's lie saying that Any type have these methods
 
 var ss: Int = 4;
 
 if (ss < 5) 4 //AnyVal 4
 
-//Why is not just Int?
-// it's can be possible that if/else
+//Q:Why ss is not just Int?
+//R: it can be possible that if/else
 // will not yield any value
 
 
