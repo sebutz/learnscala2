@@ -6,7 +6,9 @@
 
 //instead Scala has
 //no val or var for the loop variable
-
+//TH\\
+//Scala basic for loop
+// one generator
 for (i <- 1 to 10){
   println(i)
   println(i.getClass)
