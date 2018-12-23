@@ -40,3 +40,17 @@ breakable {
 println("result")
 ss
 
+
+//TH\\
+//Shadowing a la Scala
+// in Java you cannot have 2 local variables
+//with the same name and OVERLAPPING SCOPE
+
+//guess what? In Scala, no problemo
+
+
+val n = 100;
+for(n <- 1 to 7){
+  print("*" + n) // 1, 2 ...
+}
+println("n="  + n) //100
