@@ -1,5 +1,9 @@
-import java.io.IOException
+import java.io.{IOException, InputStream}
 import java.net.{MalformedURLException, URL, URLConnection}
+
+import scala.io.StdIn
+import scala.util.Try
+
 //TH\\
 //EXCEPTIONS
 
@@ -80,3 +84,41 @@ try {
 }
 
 
+// try/finally is not handling the exception
+// it's just taking care of resources
+// let's you dispose the resource
+// whether or not the exception occurred
+
+def processStream(stream: InputStream) = {
+   stream.read()
+}
+
+val in = new URL("http://" +
+  "aliexpress.com/top")
+  .openStream() // this can throw an exception
+try{
+    processStream(in)
+} finally {
+   in.close() // reader gets always close
+}
+
+//combine try/catch/finally
+// try{} catch{} finally{}
+
+// Scala don't have Java's try-with-resources statement
+//consider using Scala-ARM
+
+
+//using Try class
+//was designed to work with computations
+//that may fail with exceptions
+
+
+
+val result =
+  for(a <- Try{StdIn.readLine("a: ").toInt};
+      b <- Try{StdIn.readLine("b: ").toInt})
+    yield a/b
+
+
+// to be continued
