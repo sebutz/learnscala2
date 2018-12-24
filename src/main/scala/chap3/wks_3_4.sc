@@ -33,18 +33,18 @@ numz
 
 //PROBLEMO
 // remove all the negative elements from an array of integers
-val testRemove = Array(2, -4, 5, -13, 6, 7, -20, -9)
+val testRemove: Array[Int] = Array(2, -4, 5, -13, 6, 7, -20, -9)
 //old school
 var n = testRemove.length
 var i = 0
-while(i< n){
-  if (testRemove(i) >= 0) i +=1 //keep it
+//while(i< n){
+  // if (testRemove(i) >= 0) i +=1 //don't go there
   //else {testRemove.remove(i); n -= 1;}
   // WE CANNOT use remove BECAUSE IT"S ARRAY and not ARRAYBUFFER
- }
+// }
 
 
-val testRem = ArrayBuffer(testRemove)
+val testRem = collection.mutable.ArrayBuffer(testRemove: _*)
 testRem(0)
 
 
