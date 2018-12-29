@@ -43,9 +43,32 @@ var i = 0
   // WE CANNOT use remove BECAUSE IT"S ARRAY and not ARRAYBUFFER
 // }
 
-
+// transform an Array to ArrayBuffer
 val testRem = collection.mutable.ArrayBuffer(testRemove: _*)
 testRem(0)
 
+
+testRem.filter(_ > 0)
+for(elem<- testRem if elem >=3) yield elem
+
+//modifying the original array
+println("original array")
+testRem // ()
+val positionsToRemove = for (i <- testRem.indices if testRem(i) < 0) yield i
+val reversed = positionsToRemove.reverse
+
+println("removing")
+val testRem2 = testRem.clone()
+for (i <- positionsToRemove.reverse) testRem.remove(i)
+testRem
+
+testRem2
+for (i <- Vector(7, 6, 3, 1)) println(i)
+for(i <- Vector(7, 6, 3, 1)) {
+  println(testRem2(i))
+  testRem2.remove(i)
+}
+
+testRem2
 
 
