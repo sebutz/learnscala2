@@ -63,8 +63,33 @@ newImmutableScores4 = newImmutableScores4 + ("Marty" -> 7)
 immutableScores
 
 
-//removing a key from a map ( using -)
+//removing a key from a map ( using -) and we need only the key
+mutableScores
+mutableScores.remove("Koko") // Option[Int] = None
+mutableScores
+
+//if the key is not present nothing happens
+
+mutableScores.remove("Bob")
+mutableScores // Bob's gone
 
 
+immutableScores
+//reassignment to a val
+//immutableScores = immutableScores - "Bibi"
 
+//nothing happens
+val newImmutableScores5 = immutableScores - "Bibi"
+newImmutableScores5
 
+var newImmutableScores6 = immutableScores - "Bob"
+newImmutableScores6 // Bob's gone
+
+// or less
+newImmutableScores6 -= "Cindy"
+newImmutableScores6
+
+//You might think that it is inefficient
+// to keep constructing new maps, but that is not the case.
+// The old and new maps share most of their structure.
+// (This is possible because they are immutable.)
